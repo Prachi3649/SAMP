@@ -1,0 +1,172 @@
+
+Phase 1 -- USER Create
+
+/* registration*/
+
+url:- localhost:3000/register
+HTTP METHOD :- POST
+
+FORMATE OF POSTMAN OF REGISTRATION:-
+
+{
+     "userName" : "Prachi",
+     "emailId" : "Prachi123@gmail.com",
+     "password" : "Prachi"
+ }
+
+FORMATE OF OUTPUT
+
+{
+    "status": true,
+    "message": "Created",
+    "data": {
+        "userName": "prachi",
+        "emailId": "prachi123@gmail.com",
+        "password": "Prachi5123",
+        "_id": "63430e9b4eaa37a98763b343",
+        "createdAt": "2022-10-09T18:10:35.944Z",
+        "updatedAt": "2022-10-09T18:10:35.944Z",
+        "__v": 0
+    }
+}
+
+
+//----------------------------------------------------------------------------//
+
+Phase 2---- -USER LOGIN
+
+/* Login*/
+
+url:-localhost:3000/Login
+HTTP METHOD :- POST
+
+/* user can loging yourself with the help of userName and password
+
+FORMATE OF POSTMAN OF LOGIN:-
+
+{
+     "userName" : "Prachi",
+     "password" : "Prachi5123"
+ }
+
+FORMATE OF OUTPUT:-
+
+{
+    "status": true,
+    "message": "token created",
+    "userId": "6341a6db1c67b81a11d1998b",
+    "data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6IjYzNDFhNmRiMWM2N2I4MWExMWQxOTk4YiIsImlhdCI6MTY2NTMzNjI0OH0.EaURaMOEQ90rtmgnuGZe30CVzprVa7U92m3krKTQ38g"
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+Phase --- 3
+
+/* ADD CLIENTS /
+
+url:-localhost:3000/addclients
+HTTP METHOD :- POST
+
+FORMATE OF POSTMAN OF CREATE EVENT:-  First you have to select (Body) and that (form-data) You have to provide data in queryParams 
+
+quart params:-  companyName :- Infosys
+                businessCategory :- Technology
+                emailAddress :- Infosys@gmail.com
+                state :- Karnataka
+                gstNumber :- 06CZAHM6385P6Z2
+                selectFacilityManagementCompany :- Infosys
+                phoneNumber :-9215463587
+                contactPerson :- Prachi
+                city :- Bangalore
+                pincode :- 455636
+                faxNumber :- 4556233
+FORMATE OF OUTPUT:-
+
+{
+    "status": true,
+    "message": "Created Client",
+    "Data": {
+        "companyName": "Infosys",
+        "businessCategory": [
+            "Technology"
+        ],
+        "emailAddress": "Infosys@gmail.com",
+        "state": [
+            "Karnataka"
+        ],
+        "gstNumber": "06CZAHM6385P6Z2",
+        "selectFacilityManagementCompany": "Infosys",
+        "phoneNumber": 9215463587,
+        "contactPerson": "Prachi",
+        "city": "Bangalore",
+        "pincode": 455636,
+        "faxNumber": "4556233",
+        "_id": "63431d69d1069e4de7800045",
+        "createdAt": "2022-10-09T19:13:45.235Z",
+        "updatedAt": "2022-10-09T19:13:45.235Z",
+        "__v": 0
+    }
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+Phase --- 4
+
+url:-localhost:3000/viewClient
+
+companyName, emailAddress, contactPerson and phoneNumber in quary params pagination of 4 and sorted
+
+FORMATE OF POSTMAN OF CREATE EVENT:- you can find the data any one filled
+
+quart params:-  companyName:- Infosys
+               
+
+FORMATE OF OUTPUT:-
+{
+    "status": true,
+    "message": "GET DATA",
+    "Data": [
+        {
+            "_id": "6343158c7e9bb4de19cfca42",
+            "companyName": "Infosys",
+            "businessCategory": [
+                "Technology"
+            ],
+            "emailAddress": "Infosys@gmail.com",
+            "state": [
+                "Karnataka"
+            ],
+            "gstNumber": "06BZAHM6385P6Z2",
+            "webSite": "Infosys",
+            "selectFacilityManagementCompany": "Infosys",
+            "phoneNumber": 8795401584,
+            "contactPerson": "Prachi",
+            "city": "Bangalore",
+            "pincode": 455636,
+            "createdAt": "2022-10-09T18:40:12.947Z",
+            "updatedAt": "2022-10-09T18:40:12.947Z",
+            "__v": 0
+        },
+        {
+            "_id": "63431d69d1069e4de7800045",
+            "companyName": "Infosys",
+            "businessCategory": [
+                "Technology"
+            ],
+            "emailAddress": "Infosys@gmail.com",
+            "state": [
+                "Karnataka"
+            ],
+            "gstNumber": "06CZAHM6385P6Z2",
+            "selectFacilityManagementCompany": "Infosys",
+            "phoneNumber": 9215463587,
+            "contactPerson": "Prachi",
+            "city": "Bangalore",
+            "pincode": 455636,
+            "faxNumber": "4556233",
+            "createdAt": "2022-10-09T19:13:45.235Z",
+            "updatedAt": "2022-10-09T19:13:45.235Z",
+            "__v": 0
+        }
+    ]
+}
