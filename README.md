@@ -1,0 +1,121 @@
+# fusion-
+
+
+Phase 1 -- USER Create
+
+/* registration*/
+
+url:- localhost:3000/register
+HTTP METHOD :- POST
+
+FORMATE OF POSTMAN OF REGISTRATION:-
+
+ {
+     "userName" : "Prachi",
+     "emailId" : "prachi135@gmail.com",
+     "password" : "prachik456",
+     "role" : ["admin"]
+     
+ }
+
+FORMATE OF OUTPUT
+
+{
+     "status": true,
+    "message": "Created",
+    "data": {
+        "userName": "prachi",
+        "emailId": "prachi135@gmail.com",
+        "password": "prachik456",
+        "role": [
+            "admin"
+        ],
+        "_id": "635d83c219d5d8d786e5b0d4",
+        "createdAt": "2022-10-29T19:49:22.685Z",
+        "updatedAt": "2022-10-29T19:49:22.685Z",
+        "__v": 0
+    }
+}
+
+
+//----------------------------------------------------------------------------//
+
+Phase 2---- -USER LOGIN
+
+/* Login*/
+
+url:-localhost:3000/Login
+HTTP METHOD :- POST
+
+/* user can loging yourself with the help of userName and password
+
+FORMATE OF POSTMAN OF LOGIN:-
+
+{
+    
+     "emailId" : "prachi135@gmail.com",
+     "password" : "prachik456"
+ }
+
+FORMATE OF OUTPUT:-
+
+{
+    "status": true,
+    "message": "Token Created",
+    "userId": "635d83c219d5d8d786e5b0d4",
+    "data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6IjYzNWQ4M2MyMTlkNWQ4ZDc4NmU1YjBkNCIsImlhdCI6MTY2NzA3MzE5NX0.o5eOwWN8zj_5TNoN9Nwc7Zfej3koH-ODZQA3RsMLoZE"
+}
+
+//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
+
+Phase --- 3
+
+url:-localhost:3000/view/:id
+
+FORMATE OF POSTMAN OF GET - admin(only) can get user list 
+params:-  user_id
+In header you have to provide token and header userName
+               
+
+FORMATE OF OUTPUT:-
+{
+    "status": true,
+    "Data": [
+        {
+            "_id": "635d58c55cac49d65ab98e60",
+            "userName": "sonal singh",
+            "emailId": "sonalsingh123@gmail.com",
+            "password": "Singhp456",
+            "role": [
+                "user"
+            ],
+            "createdAt": "2022-10-29T16:45:57.871Z",
+            "updatedAt": "2022-10-29T16:45:57.871Z",
+            "__v": 0
+        },
+        {
+            "_id": "635d58d65cac49d65ab98e64",
+            "userName": "singh",
+            "emailId": "singh123@gmail.com",
+            "password": "Singhp456",
+            "role": [
+                "user"
+            ],
+            "createdAt": "2022-10-29T16:46:14.583Z",
+            "updatedAt": "2022-10-29T16:46:14.583Z",
+            "__v": 0
+        },
+        {
+            "_id": "635d58ec5cac49d65ab98e68",
+            "userName": "preet",
+            "emailId": "preet135@gmail.com",
+            "password": "Preet456",
+            "role": [
+                "user"
+            ],
+            "createdAt": "2022-10-29T16:46:36.287Z",
+            "updatedAt": "2022-10-29T16:46:36.287Z",
+            "__v": 0
+        }
+    ]
+}
