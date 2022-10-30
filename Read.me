@@ -8,24 +8,29 @@ HTTP METHOD :- POST
 
 FORMATE OF POSTMAN OF REGISTRATION:-
 
-{
+ {
      "userName" : "Prachi",
-     "emailId" : "Prachi123@gmail.com",
-     "password" : "Prachi"
+     "emailId" : "prachi135@gmail.com",
+     "password" : "prachik456",
+     "role" : ["admin"]
+     
  }
 
 FORMATE OF OUTPUT
 
 {
-    "status": true,
+     "status": true,
     "message": "Created",
     "data": {
         "userName": "prachi",
-        "emailId": "prachi123@gmail.com",
-        "password": "Prachi5123",
-        "_id": "63430e9b4eaa37a98763b343",
-        "createdAt": "2022-10-09T18:10:35.944Z",
-        "updatedAt": "2022-10-09T18:10:35.944Z",
+        "emailId": "prachi135@gmail.com",
+        "password": "prachik456",
+        "role": [
+            "admin"
+        ],
+        "_id": "635d83c219d5d8d786e5b0d4",
+        "createdAt": "2022-10-29T19:49:22.685Z",
+        "updatedAt": "2022-10-29T19:49:22.685Z",
         "__v": 0
     }
 }
@@ -45,127 +50,69 @@ HTTP METHOD :- POST
 FORMATE OF POSTMAN OF LOGIN:-
 
 {
-     "userName" : "Prachi",
-     "password" : "Prachi5123"
+    
+     "emailId" : "prachi135@gmail.com",
+     "password" : "prachik456"
  }
 
 FORMATE OF OUTPUT:-
 
 {
     "status": true,
-    "message": "token created",
-    "userId": "6341a6db1c67b81a11d1998b",
-    "data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6IjYzNDFhNmRiMWM2N2I4MWExMWQxOTk4YiIsImlhdCI6MTY2NTMzNjI0OH0.EaURaMOEQ90rtmgnuGZe30CVzprVa7U92m3krKTQ38g"
+    "message": "Token Created",
+    "userId": "635d83c219d5d8d786e5b0d4",
+    "data": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6IjYzNWQ4M2MyMTlkNWQ4ZDc4NmU1YjBkNCIsImlhdCI6MTY2NzA3MzE5NX0.o5eOwWN8zj_5TNoN9Nwc7Zfej3koH-ODZQA3RsMLoZE"
 }
 
 //---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
 
 Phase --- 3
 
-/* ADD CLIENTS /
+url:-localhost:3000/view/:id
 
-url:-localhost:3000/addclients
-HTTP METHOD :- POST
-
-FORMATE OF POSTMAN OF CREATE EVENT:-  First you have to select (Body) and that (form-data) You have to provide data in queryParams 
-
-quart params:-  companyName :- Infosys
-                businessCategory :- Technology
-                emailAddress :- Infosys@gmail.com
-                state :- Karnataka
-                gstNumber :- 06CZAHM6385P6Z2
-                selectFacilityManagementCompany :- Infosys
-                phoneNumber :-9215463587
-                contactPerson :- Prachi
-                city :- Bangalore
-                pincode :- 455636
-                faxNumber :- 4556233
-FORMATE OF OUTPUT:-
-
-{
-    "status": true,
-    "message": "Created Client",
-    "Data": {
-        "companyName": "Infosys",
-        "businessCategory": [
-            "Technology"
-        ],
-        "emailAddress": "Infosys@gmail.com",
-        "state": [
-            "Karnataka"
-        ],
-        "gstNumber": "06CZAHM6385P6Z2",
-        "selectFacilityManagementCompany": "Infosys",
-        "phoneNumber": 9215463587,
-        "contactPerson": "Prachi",
-        "city": "Bangalore",
-        "pincode": 455636,
-        "faxNumber": "4556233",
-        "_id": "63431d69d1069e4de7800045",
-        "createdAt": "2022-10-09T19:13:45.235Z",
-        "updatedAt": "2022-10-09T19:13:45.235Z",
-        "__v": 0
-    }
-}
-
-//---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------//
-
-Phase --- 4
-
-url:-localhost:3000/viewClient
-
-companyName, emailAddress, contactPerson and phoneNumber in quary params pagination of 4 and sorted
-
-FORMATE OF POSTMAN OF CREATE EVENT:- you can find the data any one filled
-
-quart params:-  companyName:- Infosys
+FORMATE OF POSTMAN OF GET - admin(only) can get user list 
+params:-  user_id
+In header you have to provide token and header userName
                
 
 FORMATE OF OUTPUT:-
 {
     "status": true,
-    "message": "GET DATA",
     "Data": [
         {
-            "_id": "6343158c7e9bb4de19cfca42",
-            "companyName": "Infosys",
-            "businessCategory": [
-                "Technology"
+            "_id": "635d58c55cac49d65ab98e60",
+            "userName": "sonal singh",
+            "emailId": "sonalsingh123@gmail.com",
+            "password": "Singhp456",
+            "role": [
+                "user"
             ],
-            "emailAddress": "Infosys@gmail.com",
-            "state": [
-                "Karnataka"
-            ],
-            "gstNumber": "06BZAHM6385P6Z2",
-            "webSite": "Infosys",
-            "selectFacilityManagementCompany": "Infosys",
-            "phoneNumber": 8795401584,
-            "contactPerson": "Prachi",
-            "city": "Bangalore",
-            "pincode": 455636,
-            "createdAt": "2022-10-09T18:40:12.947Z",
-            "updatedAt": "2022-10-09T18:40:12.947Z",
+            "createdAt": "2022-10-29T16:45:57.871Z",
+            "updatedAt": "2022-10-29T16:45:57.871Z",
             "__v": 0
         },
         {
-            "_id": "63431d69d1069e4de7800045",
-            "companyName": "Infosys",
-            "businessCategory": [
-                "Technology"
+            "_id": "635d58d65cac49d65ab98e64",
+            "userName": "singh",
+            "emailId": "singh123@gmail.com",
+            "password": "Singhp456",
+            "role": [
+                "user"
             ],
-            "emailAddress": "Infosys@gmail.com",
-            "state": [
-                "Karnataka"
+            "createdAt": "2022-10-29T16:46:14.583Z",
+            "updatedAt": "2022-10-29T16:46:14.583Z",
+            "__v": 0
+        },
+        {
+            "_id": "635d58ec5cac49d65ab98e68",
+            "userName": "preet",
+            "emailId": "preet135@gmail.com",
+            "password": "Preet456",
+            "role": [
+                "user"
             ],
-            "gstNumber": "06CZAHM6385P6Z2",
-            "selectFacilityManagementCompany": "Infosys",
-            "phoneNumber": 9215463587,
-            "contactPerson": "Prachi",
-            "city": "Bangalore",
-            "pincode": 455636,
-            "faxNumber": "4556233",
-            "createdAt": "2022-10-09T19:13:45.235Z",
-            "updatedAt": "2022-10-09T19:13:45.235Z",
+            "createdAt": "2022-10-29T16:46:36.287Z",
+            "updatedAt": "2022-10-29T16:46:36.287Z",
             "__v": 0
         }
     ]
