@@ -1,24 +1,27 @@
 
-
+var log4js = require("log4js");
 const express =  require ("express")
+const bodyParser = require ("body-parser")
+const mongoose = require("mongoose")
+const multer = require("multer")
+var logger = log4js.getLogger('Index');
+logger.level = "info";
 const app = express()
 
-const bodyParser = require ("body-parser")
 app.use (bodyParser.json())
 app.use(bodyParser.urlencoded({extended:true}))
-
+app.use(multer().any())
 
 const router = require("./router/router")
 app.use("/" , router)
 
-const mongoose = require("mongoose")
 
-mongoose.connect('mongodb+srv://pankaj:XHR0F0IrqL14JxKZ@cluster0.ajtoy.mongodb.net/fusion ',{useNewUrlParser:true})
-.then( () =>console.log("mongoose is contected..."))
-.catch( err => console.log(err))
+mongoose.connect('mongodb+srv://pankaj:XHR0F0IrqL14JxKZ@cluster0.ajtoy.mongodb.net/SAMP',{useNewUrlParser:true})
+.then( () =>logger.log("mongoose is contected..."))
+.catch( err => logger.error(err))
 
 
 
 app.listen (process.env.port || 3000 ,  () => {
-    console.log ("Express is connected 3000")
+    logger.log("Express is connected 3000")
 })

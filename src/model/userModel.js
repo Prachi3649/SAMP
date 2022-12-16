@@ -3,7 +3,7 @@ const mongoose = require("mongoose")
 
 const userSchema  = new mongoose.Schema({
 
-    userName : {
+    name : {
         type : String,
         require : true,
         lowercase : true,
@@ -24,13 +24,17 @@ const userSchema  = new mongoose.Schema({
         require : true,
         
     },
+    profilePic: {
+        type: String,
+        require : true
+    },
     role : {
-        type: [String],
-        enum: ["user", "admin"],
-        default: "user",
+        type: String,
+        enum: ["admin", "teamLead", "developer"],
+        
     },
 
 } , { timestamps: true}) ;
 
-module.exports = new mongoose.model( "usersModel" , userSchema)
+module.exports = new mongoose.model( "user" , userSchema)
 
